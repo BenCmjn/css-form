@@ -1,8 +1,12 @@
-<div class="container">
+<div class="home_container">
 	<div class="menu">
 		<div class="wording">
 			<h1>Home#index</h1>
-			<p>Bienvenue sur l'app mon ami</p>
+			<% if user_signed_in? %>
+				<p>Bienvenue sur l'app <%= current_user.email %></p>
+			<%else%>
+				<p>Bienvenue sur l'app les amis</p>
+			<%end%>			
 		</div>
 		<div class="control">
 			<ul>

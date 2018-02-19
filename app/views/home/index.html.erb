@@ -1,17 +1,19 @@
 <div class="container">
 	<div class="menu">
-		<h1>Home#index</h1>
-		<p>Bienvenue sur l'app mon ami</p>
-		<ul>
-			<li><%= link_to "Se connecter", new_user_session_path %></li>
-			<li><%= link_to "S'inscrire", new_user_registration_path %>	</li>
-			<li> <a> <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%></a></li>
-		</ul>
-		
-		
-
-		
-		
+		<div class="wording">
+			<h1>Home#index</h1>
+			<p>Bienvenue sur l'app mon ami</p>
+		</div>
+		<div class="control">
+			<ul>
+				<% if user_signed_in? %>
+					<li> <%= link_to("Se déconnecter", destroy_user_session_path, method: :delete)  %></li>
+				<%else%>
+					<li> <%= link_to("Se connecter", new_user_session_path) %></li>
+					<li> <%= link_to("S'inscrire", new_user_registration_path) %></li>
+				<%end%>
+			</ul>
+		</div>
 	</div>
 </div>
 

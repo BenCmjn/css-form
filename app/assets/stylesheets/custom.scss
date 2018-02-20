@@ -9,6 +9,9 @@ body {
 }
 
 .container {
+    animation-duration: .5s;
+    animation-name: appear;
+
     background-color: $primary-color;
     width: 40rem;
     height: 25rem;
@@ -19,6 +22,16 @@ body {
     div:first-child {
         background-color: white;
         color: #1D1D1D;
+    }
+}
+@keyframes appear {
+    from {
+        margin-top: 10rem;
+        // background-color: rgba(0,0,0,0);
+    }
+    to {
+        margin-top: 9rem;
+        // background-color: $primary-color;
     }
 }
 
@@ -86,7 +99,7 @@ body {
             }
         }
     }
-    .switch a{
+    .switch a {
         background-color: #d6d8e4;
         height: 4em;
         text-align: center;
@@ -115,7 +128,18 @@ hr {
     border-width: 0.5px;
 }
 
-
-
-// .container>
-// }
+.alert {
+    background-color: rgba(0, 0, 20, 0.8);
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    height: 4em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    line-height: 3em;
+    height: fit-content;
+    font-family: 'montserrat', sans-serif;
+    width: -webkit-fill-available;
+}

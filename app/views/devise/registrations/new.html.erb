@@ -1,37 +1,35 @@
 <div class="container">
   <div class="uniform">
-    <h1>Uniform</h1>
-    <p>Voili voilà voilou</p>
+    <h1>beniform</h1>
+    <p>L'inscription devient plus simple</p>
     <hr>
     <ul>
       <li>Un seul form pour se logguer</li>
-      <li>Gerer le contenu</li>
+      <li>Des feuilles de styles encapsulées</li>
       <li>Stocker des données</li>
     </ul>
   </div>
 
   <div class="description">
-    <!-- <h2>Sign up</h2> -->
+
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
     <div class="field">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Adresse email" %>
     </div>
-
     <div class="field">
       <%= f.password_field :password, autocomplete: "off", placeholder:"Mot de passe" %>
     </div>
-
     <div class="field">
       <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"Confirmer" %>
     </div>
-
     <div class="actions">
       <%= f.submit "S'inscrire" %>
     </div>
-  <% end %>  
+    <% end %>  
+  
+  
+  <span class="switch"> <%= render"devise/shared/links" %></span>
+  
   </div>
-  <div class="switch">
-      <%= render "devise/shared/links" %>
-    </div>
 </div>
